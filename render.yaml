@@ -1,9 +1,7 @@
 services:
   - type: web
     name: electronic-health-record
-    env: java
-    buildCommand: ./mvnw clean package
-    startCommand: java -jar target/electronicHealthRecord.war
+    env: docker
     plan: free
 
 
