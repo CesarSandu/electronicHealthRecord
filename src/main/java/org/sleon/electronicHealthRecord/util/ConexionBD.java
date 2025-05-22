@@ -7,9 +7,12 @@ import java.sql.SQLException;
 
 public class ConexionBD {
     private static DriverManager driverManager;
-    private static String url= "jdbc:mysql://localhost:3306/electronichealthrecord?serverTimezone=America/Monterrey";
-    private static String username = "cesar";
-    private static String password = "141466Ce*";
+//    private static String url= "jdbc:mysql://localhost:3306/electronichealthrecord?serverTimezone=America/Monterrey";
+//    private static String username = "cesar";
+//    private static String password = "141466Ce*";
+    private static String url = "jdbc:mysql://maglev.proxy.rlwy.net:54034/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    private static String username = "root";
+    private static String password = "DAEsdTzPcAaxrOgXgCqlliJDCJjWSBNd";
 
     public static Connection getConnection() throws SQLException, NamingException {
         return DriverManager.getConnection(url, username, password);
