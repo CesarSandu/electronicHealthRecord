@@ -61,7 +61,7 @@ public class CrearGrupoMedicoController extends HttpServlet {
         String especialidad = req.getParameter("especialidad");
         String accion = req.getParameter("accion");
         String idUsuario = "";
-        String contraseña = "";
+        String contrasenia = "";
 
         HashMap<String,String> errores = new HashMap<>();
 
@@ -111,7 +111,7 @@ public class CrearGrupoMedicoController extends HttpServlet {
         //VERIFICACION DE CAMPOS ID DE USUARIO Y CONTRASEÑA
         if(accion != null && accion.equals("crear")){
             idUsuario = req.getParameter("idUsuario");
-            contraseña = req.getParameter("contraseña");
+            contrasenia = req.getParameter("contrasenia");
 
             if (idUsuario == null || idUsuario.isBlank()) {
                 errores.put("idUsuario", "El id del usuario es obligatorio");
@@ -121,11 +121,11 @@ public class CrearGrupoMedicoController extends HttpServlet {
                 errores.put("idUsuario", "El id de usuario ya existe.");
             }
 
-            if (contraseña == null || contraseña.isBlank()) {
-                errores.put("contraseña", "la contraseña es obligatoria.");
+            if (contrasenia == null || contrasenia.isBlank()) {
+                errores.put("contrasenia", "la contraseña es obligatoria.");
             }
             gm.setIdUsuario(idUsuario);
-            gm.setContrasenia(contraseña);
+            gm.setContrasenia(contrasenia);
         }
 
         req.setAttribute("grupoMedico", Optional.ofNullable(gm));
@@ -135,11 +135,11 @@ public class CrearGrupoMedicoController extends HttpServlet {
                 grupoMedicoService.actualizar(gm);
             }else{
                 gm.setIdUsuario(idUsuario);
-                gm.setContrasenia(contraseña);
+                gm.setContrasenia(contrasenia);
                 gm.setResponsableRegistro(administrador);
                 grupoMedicoService.crear(gm);
             }
-            resp.sendRedirect("/electronicHealthRecord/administrador/usuarios/listar?tipo=grupoMedico");
+            resp.sendRedirect(req.getContextPath() + "/administrador/usuarios/listar?tipo=grupoMedico");
         } else {
             req.setAttribute("errores", errores);
             req.setAttribute("accion", "crear");
