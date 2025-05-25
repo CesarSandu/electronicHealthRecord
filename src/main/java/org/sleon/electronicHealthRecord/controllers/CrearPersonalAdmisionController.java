@@ -64,7 +64,7 @@ public class CrearPersonalAdmisionController extends HttpServlet {
         String telefono = req.getParameter("telefono");
         String accion = req.getParameter("accion");
         String idUsuario = req.getParameter("idUsuario");
-        String contrasenia = req.getParameter("contraseña");
+        String contrasenia = req.getParameter("contrasenia");
 
         HashMap<String,String> errores = new HashMap<>();
 
