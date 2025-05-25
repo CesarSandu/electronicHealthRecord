@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: electronic-health-record
-    env: docker
-    plan: free
-
-
