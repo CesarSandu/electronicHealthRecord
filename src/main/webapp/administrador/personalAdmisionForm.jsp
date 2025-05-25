@@ -69,10 +69,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="text" class="form-control" id="contraseña" name="contraseña" value="${pad.present? pad.get().contrasenia : ''}"/>
-                    <c:if test="${not empty errores['contraseña']}">
-                        <div class="alert alert-danger mt-1">${errores['contraseña']}</div>
+                    <label for="contrasenia" class="form-label">Contraseña:</label>
+                    <input type="text" class="form-control" id="contrasenia" name="contrasenia" value="${pad.present? pad.get().contrasenia : ''}"/>
+                    <c:if test="${not empty errores['contrasenia']}">
+                        <div class="alert alert-danger mt-1">${errores['contrasenia']}</div>
                     </c:if>
                 </div>
             </c:if>
