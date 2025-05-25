@@ -10,7 +10,7 @@
             ${procedimiento.id != null && procedimiento.id > 0 ? 'Editar' : 'Registrar'} Procedimiento
         </h2>
 
-        <a href="/electronicHealthRecord/grupoMedico/AtencionMedica/Listar" class="btn btn-secondary mb-3">Regresar</a>
+        <a href="${pageContext.request.contextPath}/grupoMedico/AtencionMedica/Listar" class="btn btn-secondary mb-3">Regresar</a>
 
         <form action="${pageContext.request.contextPath}/grupoMedico/crearProcedimiento" method="post">
             <div class="mb-3">

@@ -40,8 +40,8 @@
                             ${gm.responsableRegistro.apellidoPaterno}
                     </td>
                     <td>${gm.responsableRegistro.telefono}</td>
-                    <td><a href="/electronicHealthRecord/usuariosHospital/actualizar?id=${gm.id}" class="btn btn-sm btn-warning">Actualizar</a></td>
-                    <td><a href="/electronicHealthRecord/usuariosHospital/eliminar?id=${gm.id}" class="btn btn-sm btn-danger">Eliminar</a></td>
+                    <td><a href="${pageContext.request.contextPath}/usuariosHospital/actualizar?id=${gm.id}" class="btn btn-sm btn-warning">Actualizar</a></td>
+                    <td><a href="${pageContext.request.contextPath}/usuariosHospital/eliminar?id=${gm.id}" class="btn btn-sm btn-danger">Eliminar</a></td>
                 </tr>
             </c:forEach>
             </tbody>

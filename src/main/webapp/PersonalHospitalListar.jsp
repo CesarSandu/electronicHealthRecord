@@ -43,10 +43,10 @@
     </div>
 
     <div class="mb-4">
-        <a href="/electronicHealthRecord/administrador/personalAdmisionForm.jsp?accion=crear" class="btn btn-success me-2">
+        <a href="${pageContext.request.contextPath}/administrador/personalAdmisionForm.jsp?accion=crear" class="btn btn-success me-2">
             Crear Personal de Admisión [+]
         </a>
-        <a href="/electronicHealthRecord/administrador/grupoMedicoForm.jsp?accion=crear" class="btn btn-success">
+        <a href="${pageContext.request.contextPath}/administrador/grupoMedicoForm.jsp?accion=crear" class="btn btn-success">
             Crear Grupo Médico [+]
         </a>
     </div>
@@ -83,8 +83,8 @@
                                 ${gm.responsableRegistro.apellidoPaterno}
                         </td>
                         <td>${gm.responsableRegistro.telefono}</td>
-                        <td class="text-center"><a href="/electronicHealthRecord/administrador/grupoMedico/actualizar?id=${gm.id}&accion=actualizar" class="btn btn-sm btn-warning">Actualizar</a></td>
-                        <td class="text-center"><a href="/electronicHealthRecord/administrador/usuariosHospital/eliminar?id=${gm.id}&tipo=grupoMedico" class="btn btn-sm btn-danger">Eliminar</a></td>
+                        <td class="text-center"><a href="${pageContext.request.contextPath}/administrador/grupoMedico/actualizar?id=${gm.id}&accion=actualizar" class="btn btn-sm btn-warning">Actualizar</a></td>
+                        <td class="text-center"><a href="${pageContext.request.contextPath}/administrador/usuariosHospital/eliminar?id=${gm.id}&tipo=grupoMedico" class="btn btn-sm btn-danger">Eliminar</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -122,8 +122,8 @@
                                 ${pa.responsableRegistro.apellidoPaterno}
                         </td>
                         <td>${pa.responsableRegistro.telefono}</td>
-                        <td class="text-center"><a href="/electronicHealthRecord/administrador/personalAdmision/actualizar?id=${pa.id}&accion=actualizar" class="btn btn-sm btn-warning">Actualizar</a></td>
-                        <td class="text-center"><a href="/electronicHealthRecord/administrador/usuariosHospital/eliminar?id=${pa.id}&tipo=admision" class="btn btn-sm btn-danger">Eliminar</a></td>
+                        <td class="text-center"><a href="${pageContext.request.contextPath}/administrador/personalAdmision/actualizar?id=${pa.id}&accion=actualizar" class="btn btn-sm btn-warning">Actualizar</a></td>
+                        <td class="text-center"><a href="${pageContext.request.contextPath}/administrador/usuariosHospital/eliminar?id=${pa.id}&tipo=admision" class="btn btn-sm btn-danger">Eliminar</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
