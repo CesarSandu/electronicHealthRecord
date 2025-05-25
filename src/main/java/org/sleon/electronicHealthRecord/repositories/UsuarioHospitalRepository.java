@@ -32,14 +32,14 @@ public class UsuarioHospitalRepository implements Repository<UsuarioHospital> {
     @Override
     public Optional<UsuarioHospital> findByCredentials(String username, String password, String tipo) throws SQLException {
         String sql = """
-    SELECT usuario.id, usuario.nombre, usuario.apellidoM,
-           usuario.apellidoP, usuario.genero, idUsuario,
-           personal_hospital.contraseña, personal_hospital.tipo
-    FROM usuario
-    JOIN personal_hospital ON usuario.id = personal_hospital.id
-    WHERE personal_hospital.idUsuario = (?) 
-    AND personal_hospital.contraseña = (?)
-    AND personal_hospital.tipo = (?);
+    SELECT USUARIO.id, USUARIO.nombre, USUARIO.apellidoM,
+           USUARIO.apellidoP, USUARIO.genero, idUsuario,
+           PERSONAL_HOSPITAL.contraseña, PERSONAL_HOSPITAL.tipo
+    FROM USUARIO
+    JOIN PERSONAL_HOSPITAL ON USUARIO.id = PERSONAL_HOSPITAL.id
+    WHERE PERSONAL_HOSPITAL.idUsuario = (?) 
+    AND PERSONAL_HOSPITAL.contraseña = (?)
+    AND PERSONAL_HOSPITAL.tipo = (?);
     """;
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -62,8 +62,8 @@ public class UsuarioHospitalRepository implements Repository<UsuarioHospital> {
 
     @Override
     public List<UsuarioHospital> listAll() throws SQLException {
-        String sql = "SELECT usuario.id,idUsuario, contraseña, telefono, nombre, apellidoP, apellidoM, genero, personal_hospital.tipo\n" +
-                " FROM personal_hospital, usuario WHERE personal_hospital.id = usuario.id;";
+        String sql = "SELECT USUARIO.id,idUsuario, contraseña, telefono, nombre, apellidoP, apellidoM, genero, PERSONAL_HOSPITAL.tipo\n" +
+                " FROM PERSONAL_HOSPITAL, usuario WHERE PERSONAL_HOSPITAL.id = USUARIO.id;";
         List<UsuarioHospital> usuariosHospital = new ArrayList<>();
 
         try (PreparedStatement stmt = connection.prepareStatement(sql);
@@ -90,7 +90,7 @@ public class UsuarioHospitalRepository implements Repository<UsuarioHospital> {
     }
 
     public boolean existTel(String telefono, Long idUsuario) throws SQLException {
-        String sql = "SELECT 1 FROM usuario WHERE telefono = ? AND id != ? LIMIT 1";
+        String sql = "SELECT 1 FROM USUARIO WHERE telefono = ? AND id != ? LIMIT 1";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, telefono);
             stmt.setLong(2, idUsuario);
@@ -100,7 +100,7 @@ public class UsuarioHospitalRepository implements Repository<UsuarioHospital> {
     }
 
     public boolean existIdUsuario(String idUsuario, Long id) throws SQLException {
-        String sql = "SELECT 1 FROM personal_hospital WHERE idUsuario = ? AND id != ? LIMIT 1";
+        String sql = "SELECT 1 FROM PERSONAL_HOSPITAL WHERE idUsuario = ? AND id != ? LIMIT 1";
         try(PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, idUsuario);
             stmt.setLong(2, id);
@@ -179,6 +179,6 @@ public class UsuarioHospitalRepository implements Repository<UsuarioHospital> {
         }
         return Optional.empty();
     }
-
-
 }
+
+

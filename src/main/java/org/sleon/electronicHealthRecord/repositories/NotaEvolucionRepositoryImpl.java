@@ -19,7 +19,7 @@ public class NotaEvolucionRepositoryImpl implements NotaEvolucionRepository {
     @Override
     public List<NotaEvolucion> listarPorIdAtencionMedica(Long id) throws SQLException {
         List<NotaEvolucion> notas = new ArrayList<>();
-        String sql = "SELECT * FROM notaevolucion WHERE idAtencionMedica = ?";
+        String sql = "SELECT * FROM NotaEvolucion WHERE idAtencionMedica = ?";
 
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setLong(1, id);
@@ -45,7 +45,7 @@ public class NotaEvolucionRepositoryImpl implements NotaEvolucionRepository {
 
     @Override
     public Optional<NotaEvolucion> listarPorId(Long id) throws SQLException {
-        String sql = "SELECT * FROM notaevolucion WHERE id = (?)";
+        String sql = "SELECT * FROM NotaEvolucion WHERE id = (?)";
         NotaEvolucion nota = null;
         try(PreparedStatement stmt = conn.prepareStatement(sql)){
             stmt.setLong(1, id);

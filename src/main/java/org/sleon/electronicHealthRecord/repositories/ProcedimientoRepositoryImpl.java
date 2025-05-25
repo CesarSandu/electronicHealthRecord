@@ -18,7 +18,7 @@ public class ProcedimientoRepositoryImpl implements ProcedimientoRepository {
 
     @Override
     public List<ProcedimientoMedico> listarProcedimientosMedicos(Long id) throws SQLException {
-        String sql = "SELECT * FROM procedimiento WHERE idAtencionMedica = ?";
+        String sql = "SELECT * FROM PROCEDIMIENTO WHERE idAtencionMedica = ?";
         List<ProcedimientoMedico> procedimientosMedicos = new ArrayList<ProcedimientoMedico>();
         try(PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setLong(1, id);
@@ -58,7 +58,7 @@ public class ProcedimientoRepositoryImpl implements ProcedimientoRepository {
 
     @Override
     public void eliminar(Long id) throws SQLException {
-        String sql = "DELETE FROM procedimiento WHERE id = ?";
+        String sql = "DELETE FROM PROCEDIMIENTO WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setLong(1, id);
             stmt.executeUpdate();
@@ -67,7 +67,7 @@ public class ProcedimientoRepositoryImpl implements ProcedimientoRepository {
 
     @Override
     public void actualizar(ProcedimientoMedico procedimiento) throws SQLException {
-        String sql = "UPDATE Procedimiento SET " +
+        String sql = "UPDATE PROCEDIMIENTO SET " +
                 "idNotaEvolucion = ?, " +
                 "idGrupoMedicoEncargado = ?, " +
                 "descripcion = ?, " +
