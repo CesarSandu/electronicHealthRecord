@@ -113,14 +113,12 @@ public class CrearPersonalAdmisionController extends HttpServlet {
             }
 
             if(usuarioHospitalService.verificarIdusuario(idUsuario, id)){
-                errores.put("idUsuario", "El id de usuario ya existe.");
+                errores.put("idUsuario", "El id de usuario ya está en uso");
             }
 
             if (contrasenia == null || contrasenia.isBlank()) {
-                errores.put("contrasenia", "la contraseña es obligatoria.");
+                errores.put("contrasenia", "La contraseña es obligatoria.");
             }
-            pad.setIdUsuario(idUsuario);
-            pad.setContrasenia(contrasenia);
         }
 
         req.setAttribute("pad", Optional.ofNullable(pad));
