@@ -1,7 +1,7 @@
 package org.sleon.electronicHealthRecord.controllers;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
 import org.sleon.electronicHealthRecord.models.GrupoMedico;
 import org.sleon.electronicHealthRecord.models.UsuarioHospital;
 import org.sleon.electronicHealthRecord.services.GrupoMedicoServiceImpl;

@@ -1,11 +1,11 @@
 package org.sleon.electronicHealthRecord.filters;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
-import jakarta.servlet.annotation.WebFilter;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletResponse;
 import org.sleon.electronicHealthRecord.services.ServiceJdbcException;
 import org.sleon.electronicHealthRecord.util.ConexionBD;
 
@@ -13,7 +13,7 @@ import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import jakarta.servlet.Filter;
+import javax.servlet.Filter;
 
 @WebFilter("/*")
 public class ConexionFilter implements Filter {
