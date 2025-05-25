@@ -1,13 +1,11 @@
-FROM tomcat:9.0-jdk11
+# Imagen base de Tomcat + Java 17
+FROM tomcat:9.0-jdk17-temurin
 
-# Eliminar aplicaciones por defecto de Tomcat
+# Elimina las aplicaciones por defecto de Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copiar el WAR de tu aplicación
+# Copia el archivo .war generado al contenedor
 COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# Exponer el puerto 8080
+# Expone el puerto 8080 (Render detecta esto automáticamente)
 EXPOSE 8080
-
-# Comando para iniciar Tomcat
-CMD ["catalina.sh", "run"]
