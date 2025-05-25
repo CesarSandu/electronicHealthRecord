@@ -67,7 +67,7 @@ public class CrearNotaEvolucionServlet extends HttpServlet {
         if(idNotaEvolucion > 0 ){
             notaEvolucion.setId(idNotaEvolucion);
             notaEvolucionService.actualizar(notaEvolucion);
-            resp.sendRedirect("/electronicHealthRecord/grupoMedico/AtencionMedica/Listar");
+            resp.sendRedirect(req.getContextPath() + "/grupoMedico/AtencionMedica/Listar");
             return;
         }
 
@@ -75,10 +75,10 @@ public class CrearNotaEvolucionServlet extends HttpServlet {
             errores.put("atm","solo es posible crear una nota de evolucion por dia!");
             HttpSession session =  req.getSession();
             session.setAttribute("error","!solo es posible crear una nota de evolucion por dia!");
-            resp.sendRedirect("/electronicHealthRecord/grupoMedico/AtencionMedica/Listar");
+            resp.sendRedirect(req.getContextPath() + "/grupoMedico/AtencionMedica/Listar");
         }else{
             notaEvolucionService.crear(notaEvolucion);
-            resp.sendRedirect("/electronicHealthRecord/grupoMedico/notaEvolucion/Listar?idAtm=" + idAtencionMedica);
+            resp.sendRedirect(req.getContextPath() +"/grupoMedico/notaEvolucion/Listar?idAtm=" + idAtencionMedica);
         }
     }
 }

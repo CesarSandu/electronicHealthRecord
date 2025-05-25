@@ -28,6 +28,6 @@ public class AltaAtencionMedicaServlet extends HttpServlet {
         AtencionMedica atm = new AtencionMedica();
         atm.setId(idAtencionMedica);
         atencionMedicaService.establecerAlta(atm);
-        resp.sendRedirect("/electronicHealthRecord/grupoMedico/AtencionMedica/Listar");
+        resp.sendRedirect(req.getContextPath() + "/grupoMedico/AtencionMedica/Listar");
     }
 }

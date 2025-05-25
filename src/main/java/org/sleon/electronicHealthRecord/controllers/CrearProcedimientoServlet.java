@@ -113,10 +113,10 @@ public class CrearProcedimientoServlet extends HttpServlet {
             if(procedimientoIdParam > 0 && errores.isEmpty()){
                 procedimiento.setId(procedimientoIdParam);
                 procedimientoService.actualizar(procedimiento);
-                resp.sendRedirect("/electronicHealthRecord/grupoMedico/ProcedimientoListar?idAtencionMedica=" + idAtencionMedicaParam);
+                resp.sendRedirect(req.getContextPath()  + "/grupoMedico/ProcedimientoListar?idAtencionMedica=" + idAtencionMedicaParam);
             }else if(errores.isEmpty()){
                 procedimientoService.crear(procedimiento);
-                resp.sendRedirect("/electronicHealthRecord/grupoMedico/ProcedimientoListar?idAtencionMedica=" + idAtencionMedicaParam);
+                resp.sendRedirect(req.getContextPath() + "/grupoMedico/ProcedimientoListar?idAtencionMedica=" + idAtencionMedicaParam);
             }else{
                 req.setAttribute("procedimiento", procedimiento);
                 req.setAttribute("errores",errores);

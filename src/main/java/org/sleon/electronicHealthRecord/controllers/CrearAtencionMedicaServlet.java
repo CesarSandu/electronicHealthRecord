@@ -132,7 +132,7 @@ public class CrearAtencionMedicaServlet extends HttpServlet {
                 return;
             }
             request.getSession().setAttribute("codAcompañante",atencionMedica.getAcompaniante().getCodigoInicioSession());
-            response.sendRedirect("/electronicHealthRecord/Admision/AtencionMedica/Listar");
+            response.sendRedirect(request.getContextPath() + "/Admision/AtencionMedica/Listar");
         } else {
             request.setAttribute("errores", errores);
             request.getRequestDispatcher("/Admision/AtencionMedicaForm.jsp").forward(request, response);
