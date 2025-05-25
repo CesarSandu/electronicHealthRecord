@@ -63,8 +63,8 @@ public class CrearPersonalAdmisionController extends HttpServlet {
         String genero = req.getParameter("genero");
         String telefono = req.getParameter("telefono");
         String accion = req.getParameter("accion");
-        String idUsuario = "";
-        String contraseña = "";
+        String idUsuario = req.getParameter("idUsuario");
+        String contrasenia = req.getParameter("contraseña");
 
         HashMap<String,String> errores = new HashMap<>();
 
@@ -108,9 +108,6 @@ public class CrearPersonalAdmisionController extends HttpServlet {
 
         //VERIFICACION DE CAMPOS ID DE USUARIO Y CONTRASEÑA
         if(accion != null && accion.equals("crear")){
-            idUsuario = req.getParameter("idUsuario");
-            contraseña = req.getParameter("contraseña");
-
             if (idUsuario == null || idUsuario.isBlank()) {
                 errores.put("idUsuario", "El id del usuario es obligatorio");
             }
@@ -119,11 +116,11 @@ public class CrearPersonalAdmisionController extends HttpServlet {
                 errores.put("idUsuario", "El id de usuario ya existe.");
             }
 
-            if (contraseña == null || contraseña.isBlank()) {
-                errores.put("contraseña", "la contraseña es obligatoria.");
+            if (contrasenia == null || contrasenia.isBlank()) {
+                errores.put("contrasenia", "la contraseña es obligatoria.");
             }
             pad.setIdUsuario(idUsuario);
-            pad.setContrasenia(contraseña);
+            pad.setContrasenia(contrasenia);
         }
 
         req.setAttribute("pad", Optional.ofNullable(pad));

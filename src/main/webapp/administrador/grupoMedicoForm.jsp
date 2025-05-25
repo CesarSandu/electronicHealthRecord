@@ -78,10 +78,10 @@
         </div>
 
         <div class="mb-3">
-          <label for="contraseña" class="form-label">Contraseña:</label>
-          <input type="password" class="form-control" id="contraseña" name="contraseña" value="${grupoMedico.present? grupoMedico.get().contrasenia : ''}"/>
+          <label for="contrasenia" class="form-label">Contraseña:</label>
+          <input type="password" class="form-control" id="contrasenia" name="contrasenia" value="${grupoMedico.present? grupoMedico.get().contrasenia : ''}"/>
           <c:if test="${not empty errores['contraseña']}">
-            <div class="alert alert-danger mt-1">${errores['contraseña']}</div>
+            <div class="alert alert-danger mt-1">${errores['contrasenia']}</div>
           </c:if>
         </div>
       </c:if>
