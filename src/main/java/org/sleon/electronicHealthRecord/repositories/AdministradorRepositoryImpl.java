@@ -62,7 +62,7 @@ public class AdministradorRepositoryImpl implements UsuarioRepository<Administra
     LEFT JOIN ADMINISTRADOR aResp ON a.responsableRegistro = aResp.id
     LEFT JOIN USUARIO uResp ON aResp.id = uResp.id
 
-    WHERE a.id <> 5;
+    WHERE a.id <> 12;
 """;
 ;
 
