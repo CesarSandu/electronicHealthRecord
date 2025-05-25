@@ -15,11 +15,11 @@ public class ConexionBD {
 
     private static String username = System.getenv("MYSQLUSER") != null
             ? System.getenv("MYSQLUSER")
-            : "root";
+            : "cesar";
 
     private static String password = System.getenv("MYSQLPASSWORD") != null
             ? System.getenv("MYSQLPASSWORD")
-            : "ghvywuZuIYoZbzuApKiQJPGmSQEDBIGq";
+            : "141466Ce*";
 
     public static Connection getConnection() throws SQLException, NamingException {
         try {
