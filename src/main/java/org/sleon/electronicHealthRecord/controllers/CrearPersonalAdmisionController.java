@@ -135,7 +135,7 @@ public class CrearPersonalAdmisionController extends HttpServlet {
             }else{
                 admisionService.crear(pad);
             }
-            resp.sendRedirect("${pageContext.request.contextPath}/administrador/usuarios/listar?tipo=admision");
+            resp.sendRedirect(req.getContextPath() + "/administrador/usuarios/listar?tipo=admision");
         } else {
             req.setAttribute("errores", errores);
             req.setAttribute("accion", "crear");
